@@ -5,11 +5,11 @@
 	<title>Rock, paper, scissors</title>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<!-- add title-->
-	<div class="container">
+	<div class="container title">
   		<h3 class="text-center">
     		Welcome to the game
     		<span class="label label-default">Rock</span>
@@ -20,7 +20,7 @@
 	<!-- add button to start the game-->
 	<div id="js-newGameElement" class="container">
   		<div class="row text-center">
-    		<button  id="js-newGameButton" class="btn btn-default">
+    		<button  id="js-newGameButton" class="btn btn-success">
       			New game
     		</button>
   		</div>
@@ -59,14 +59,16 @@
       			Player Name
       			</span>
     		</div>
-    		<div class="col-xs-2 text-center">
+    		<div class="col-xs-2 text-center vs">
       			VS.
     		</div>
     		<div class="col-xs-5 text-center">
       			<span id="js-computerPoints" class="badge">
       			0
       			</span>
+      			<span id="js-computer">
       			Computer
+      			</span>
     		</div>
   		</div>
   		<div class="row">
