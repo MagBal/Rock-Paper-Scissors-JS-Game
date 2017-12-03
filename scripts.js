@@ -60,3 +60,27 @@ function newGame() {
     	// setGamePoints(); // This function has not been created yet
   	}
 }
+
+//choice of player
+function playerPick(playerPick) {
+    console.log(playerPick);
+}
+
+//choice of computer
+function getComputerPick() {
+    var possiblePicks = ['rock', 'paper', 'scissors'];
+    return possiblePicks[Math.floor(Math.random()*3)];
+}
+
+//put player and computer choices on the site
+var playerPickElem = document.getElementById('js-playerPick'),
+    computerPickElem = document.getElementById('js-computerPick'),
+    playerResultElem = document.getElementById('js-playerResult'),
+    computerResultElem = document.getElementById('js-computerResult');
+
+function playerPick(playerPick) {
+    var computerPick = getComputerPick();
+
+    playerPickElem.innerHTML = playerPick;
+    computerPickElem.innerHTML = computerPick;
+}
