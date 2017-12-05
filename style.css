@@ -2,6 +2,9 @@
 .container {
 	padding: 15px;
 }
+.title h3 {
+	font-size: 30px;
+}
 .title h3, #js-newGameButton, #js-resultsTableElement span, .vs {
 	font-weight: bold;
 }
