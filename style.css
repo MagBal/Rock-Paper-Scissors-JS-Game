@@ -1,10 +1,31 @@
 
 .container {
 	padding: 15px;
+	background: #C0C0C0;
 }
 .title h3 {
 	font-size: 30px;
 }
 .title h3, #js-newGameButton, #js-resultsTableElement span, .vs {
 	font-weight: bold;
+}
+i.fa {
+	color: #fe7f00;
+}
+#js-playerPickElement button {
+	background: #262626;
+	color: #FFF;
+	font-size: 20px;
+	font-weight: bold;
+}
+.container.table_elem {
+	color: #262626;
+	font-size: 18px;
+	font-weight: bold;
+}
+.badge {
+	font-size: 18px;
+	background: #262626;
+	border-radius: 10px;
+	padding: 5px 10px;
 }
