@@ -7,12 +7,18 @@ var pickRock = document.getElementById('js-playerPick_rock'),
     pickPaper = document.getElementById('js-playerPick_paper'),
     pickScissors = document.getElementById('js-playerPick_scissors');
 
-pickRock.addEventListener('click', function() { playerPick('rock') });
-pickPaper.addEventListener('click', function() { playerPick('paper') });
-pickScissors.addEventListener('click', function() { playerPick('scissors') });
+pickRock.addEventListener('click', function() {
+    playerPick('rock')
+});
+pickPaper.addEventListener('click', function() {
+    playerPick('paper')
+});
+pickScissors.addEventListener('click', function() {
+    playerPick('scissors')
+});
 
 //initial value
-var gameState = 'notStarted',  //started // ended
+var gameState = 'notStarted', //started // ended
     player = {
         name: '',
         score: 0
@@ -28,24 +34,24 @@ var newGameElem = document.getElementById('js-newGameElement'),
 
 
 function setGameElements() {
-	switch(gameState) {
-    	case 'started':
-        	newGameElem.style.display = 'none';
-        	pickElem.style.display = 'block';
-        	resultsElem.style.display = 'block';
-      	break;
-    	case 'ended':
-        	newGameBtn.innerText = 'Play again';
+    switch (gameState) {
+        case 'started':
+            newGameElem.style.display = 'none';
+            pickElem.style.display = 'block';
+            resultsElem.style.display = 'block';
+            break;
+        case 'ended':
+            newGameBtn.innerText = 'Play again';
             playerPickElem.innerHTML = 'Player selection';
             computerPickElem.innerHTML = 'Computer selection';
             playerResultElem.innerHTML = 'Player Score';
             computerResultElem.innerHTML = 'Computer Score';
         case 'notStarted':
-    	default:
-        	newGameElem.style.display = 'block';
-        	pickElem.style.display = 'none';
-        	resultsElem.style.display = 'none';
-  	}
+        default:
+            newGameElem.style.display = 'block';
+            pickElem.style.display = 'none';
+            resultsElem.style.display = 'none';
+    }
 }
 setGameElements();
 
@@ -57,14 +63,14 @@ var playerPointsElem = document.getElementById('js-playerPoints'),
 //function activated after pressing the new game button
 function newGame() {
     player.name = prompt('Please enter your name', 'player name');
-        if (player.name) {
-            player.score = computer.score = 0;
-            gameState = 'started';
-            setGameElements();
+    if (player.name) {
+        player.score = computer.score = 0;
+        gameState = 'started';
+        setGameElements();
 
-            playerNameElem.innerHTML = player.name;
-            setGamePoints();
-        }
+        playerNameElem.innerHTML = player.name;
+        setGamePoints();
+    }
 }
 
 //function: choice of player
@@ -80,7 +86,7 @@ function playerPick(playerPick) {
 //function: choice of computer
 function getComputerPick() {
     var possiblePicks = ['rock', 'paper', 'scissors'];
-    return possiblePicks[Math.floor(Math.random()*3)];
+    return possiblePicks[Math.floor(Math.random() * 3)];
 }
 
 //placing the player and computer selection on the site
@@ -97,12 +103,12 @@ function checkRoundWinner(playerPick, computerPick) {
 
     if (playerPick == computerPick) {
         winnerIs = 'noone';
-        playerResultElem.innerHTML = "Draw!"; 
+        playerResultElem.innerHTML = "Draw!";
         computerResultElem.innerHTML = "Draw!";
     } else if (
-        (computerPick == 'rock' &&  playerPick == 'scissors') ||
-        (computerPick == 'scissors' &&  playerPick == 'paper') ||
-        (computerPick == 'paper' &&  playerPick == 'rock')) {
+        (computerPick == 'rock' && playerPick == 'scissors') ||
+        (computerPick == 'scissors' && playerPick == 'paper') ||
+        (computerPick == 'paper' && playerPick == 'rock')) {
 
         winnerIs = 'computer';
     }
@@ -129,14 +135,13 @@ function setGamePoints() {
 
 //ended the game
 function scoredTenPoints() {
-	if (player.score == 10) {
-		alert (player.name + ' , You win whole round!');
-		gameState = 'ended';
-		setGameElements();
-	} else if (computer.score == 10) {
-		alert (player.name + ' , You lost whole round!');
-		gameState = 'ended';
-		setGameElements();
-	}
+    if (player.score == 10) {
+        alert(player.name + ' , You win whole round!');
+        gameState = 'ended';
+        setGameElements();
+    } else if (computer.score == 10) {
+        alert(player.name + ' , You lost whole round!');
+        gameState = 'ended';
+        setGameElements();
+    }
 }
-
