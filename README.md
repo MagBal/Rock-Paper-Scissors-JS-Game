@@ -1,4 +1,4 @@
-Rock Paper Scissors Game
+# Rock Paper Scissors Game
 
 A classic game of Stone, paper and scissors written in JS using Twitter Bootstrap.
 The game consists of any number of rounds. 
